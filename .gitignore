@@ -13,9 +13,8 @@ develop-eggs/
 dist/
 downloads/
 eggs/
-# models/resources_*
-# models/yolov7_N*
-models/
+models/resources_*
+models/yolov7_N*
 doc/img/
 .eggs/
 lib/
