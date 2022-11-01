@@ -13,11 +13,12 @@ develop-eggs/
 dist/
 downloads/
 eggs/
+# models/resources_*
+# models/yolov7_N*
 models/
 doc/img/
 .eggs/
 lib/
-.idea/
 lib64/
 parts/
 sdist/
