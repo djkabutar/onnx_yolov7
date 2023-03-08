@@ -2,15 +2,15 @@ import cv2
 
 from YOLOv7 import YOLOv7
 
-# Initialize the webcam
-cap = cv2.VideoCapture(0)
-
 # Initialize YOLOv7 object detector
-model_path = "models/yolov7-tiny_Nx3x256x320.onnx"
-yolov7_detector = YOLOv7(model_path, conf_thres=0.5, iou_thres=0.5)
+model_path = "models/yolov7_Nx3x736x1280.onnx"
+yolov7_detector = YOLOv7(model_path, conf_thres=0.2, iou_thres=0.5)
 
 cv2.namedWindow("Detected Objects", cv2.WINDOW_NORMAL)
-while cap.isOpened():
+while True:
+
+    # Initialize the webcam
+    cap = cv2.VideoCapture("http://192.168.29.154:8080/video")
 
     # Read frame from the video
     ret, frame = cap.read()
@@ -27,3 +27,4 @@ while cap.isOpened():
     # Press key q to stop
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+    cap.release()
